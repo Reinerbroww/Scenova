@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Scenova">
+  <rect width="32" height="32" rx="7" fill="#F3EBDD" />
+  <path
+    d="M16 27C9 27 5 22 5 15c0-5 4-9 11-10 7 1 11 5 11 10 0 7-4 12-11 12Z"
+    fill="#2F4A3A"
+  />
+  <path d="M16 25V9" stroke="#F3EBDD" stroke-width="1.6" stroke-linecap="round" />
+  <path
+    d="M16 15c-3-1-5-3-5-6 3 0 5 2 5 6Zm0 5c3-1 5-3 5-6-3 0-5 2-5 6Z"
+    fill="#F47E6A"
+  />
+</svg>
