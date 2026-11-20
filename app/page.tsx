@@ -163,7 +163,7 @@ export default async function LandingPage() {
               </p>
             </div>
             <ButtonLink href={destination} variant="accent" size="lg">
-              Start Simulation
+              {t("Start Simulation")}
             </ButtonLink>
           </div>
         </section>
