@@ -125,7 +125,7 @@ Alur yang memerlukan akun (registrasi, login, buat simulasi, simpan/bandingkan s
 | Migrasi database produksi | Selesai — 5 tabel aktif pada branch Neon `br-crimson-darkness-b3mljqfm` |
 | Deployment live | Selesai — https://scenova-seven.vercel.app/ |
 | Smoke test produksi | Sebagian — pemeriksaan read-only lolos; alur terautentikasi perlu review manual |
-| Product review (STEP 10) | In progress — bukti smoke test siap; menunggu final approval |
+| Product review (STEP 10) | Selesai — final approval diterima; bukti smoke test tercatat |
 
 ## 9. Catatan Implementasi
 

@@ -231,4 +231,4 @@ The MVP scope is intentionally fixed. Before adding features, changing the data 
 
 ## Status
 
-MVP build, local verification, localization, production deployment, and read-only production smoke tests are complete. The app is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/); STEP 10 final approval is pending.
+Scenova MVP is complete and approved. The app is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/) with EN/ID localization, automated verification, and production smoke-test evidence in [`docs/09-deployment.md`](docs/09-deployment.md).
