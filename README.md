@@ -10,6 +10,7 @@ Scenova is an interactive business simulation platform for small and medium busi
 
 ## Table of Contents
 
+- [Live Demo](#live-demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
@@ -20,7 +21,15 @@ Scenova is an interactive business simulation platform for small and medium busi
 - [Testing](#testing)
 - [Localization](#localization)
 - [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
 - [Documentation](#documentation)
+
+---
+
+## Live Demo
+
+The deployed MVP is available at **[scenova-seven.vercel.app](https://scenova-seven.vercel.app/)**.
 
 ---
 
@@ -98,7 +107,7 @@ Open `http://localhost:3000`.
 | Variable | Required | Description |
 |---|---|---|
 | `DATABASE_URL` | Yes | PostgreSQL connection string. Use a Neon pooled endpoint in production. |
-| `NEXT_PUBLIC_APP_URL` | Yes | Public application origin used for auth redirects, without a trailing slash. |
+| `APP_URL` | Yes | Application origin reserved for server-side redirects and links, without a trailing slash. Private; not exposed to the browser. |
 | `NODE_ENV` | Managed by host | Set automatically by the deployment platform. Do not set manually. |
 
 See `.env.example` for the local template.
@@ -141,8 +150,9 @@ scenova/
 - The approved plan specified Supabase. Because Supabase credentials were unavailable during implementation, the project uses **Neon PostgreSQL** with a server-side email/password directory in `app_users`. This provider substitution was approved as a fallback and does not change the MVP scope.
 - Sessions are stored as hashed tokens in `sessions` and delivered through an httpOnly cookie. The cookie is marked secure in production.
 - Business tables use **Row Level Security** with `FORCE ROW LEVEL SECURITY`. Ownership is enforced by server queries plus a transaction-local `app.current_user_id` setting via `withUser()`.
+- The backend is colocated with the frontend as Next.js Route Handlers under `app/api`: auth (`/api/auth/*`), simulations (`/api/simulations/*`), and scenarios (`/api/scenarios/[id]`). No separate backend service is required.
 - Monetary values are stored as `NUMERIC(14,2)`. Calculations use deterministic pure TypeScript helpers rather than database-side formulas.
-- Secrets remain server-side. Only `NEXT_PUBLIC_APP_URL` is exposed to the browser.
+- Secrets and `APP_URL` remain server-side; no environment value is exposed to the browser.
 - The MVP intentionally excludes AI/ML predictions, Monte Carlo simulation, POS/bank/marketplace integrations, full accounting, industry-specific engines, arbitrary formulas, collaboration, and billing.
 
 ---
@@ -178,9 +188,28 @@ English source strings act as dictionary keys, so validation and API messages ar
 
 ## Deployment
 
+The production deployment is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/). Vercel serves both the UI and the API routes; Neon Postgres remains the only external backend dependency.
+
 Deployment preparation is documented in [`docs/09-deployment.md`](docs/09-deployment.md). It covers prerequisites, environment configuration, database migration, pre-release checks, deployment options, production smoke tests, and rollback.
 
-No live deployment is performed by this repository by default. Deploy only after production credentials and host access are configured.
+Set `DATABASE_URL` and `APP_URL` in the host environment settings. Because `APP_URL` has no `NEXT_PUBLIC_` prefix, it stays private and is not exposed to the browser.
+
+---
+
+## Troubleshooting
+
+| Symptom | Check |
+|---|---|
+| `DATABASE_URL is not configured` | The variable is missing in the host environment. Add it and redeploy. |
+| Database connection fails from Vercel | Confirm the Neon branch allows public connections and that the pooled connection string is used. |
+| Environment change has no effect | `NEXT_PUBLIC_*` values are inlined at build time; redeploy after any change. This project uses only private variables. |
+| Indonesian text does not appear | Check the `scenova_lang` cookie value (`en` or `id`) and refresh the page. |
+
+---
+
+## Contributing
+
+The MVP scope is intentionally fixed. Before adding features, changing the data model, or altering the calculation rules, review [`docs/coldstart.md`](docs/coldstart.md) and get explicit approval. Keep changes small, reuse existing components, and run the full verification suite before opening a pull request.
 
 ---
 
@@ -202,4 +231,4 @@ No live deployment is performed by this repository by default. Deploy only after
 
 ## Status
 
-MVP build, local verification, and localization are complete. STEP 9 deployment documentation is prepared; live deployment and STEP 10 product review are pending approval and production access.
+MVP build, local verification, localization, and production deployment are complete. The app is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/); STEP 10 product review remains the final milestone.

@@ -393,7 +393,7 @@ All calculation edge cases must be tested, including zero revenue and non-positi
 | STEP 6 | Stack, database, AI builder setup | Complete — Neon fallback approved |
 | STEP 7 | Full-stack build | Complete — MVP flows implemented |
 | STEP 8 | Testing & debugging | Complete — local checks passed |
-| STEP 9 | Deployment & documentation | In progress — checklist documented in `docs/09-deployment.md`; live deploy pending approval and credentials |
+| STEP 9 | Deployment & documentation | Complete — live at https://scenova-seven.vercel.app/; checklist in `docs/09-deployment.md` |
 | STEP 10 | Product review (additional review) | Not started |
 
-**Current milestone:** MVP build, local verification, and localization complete. Deployment documentation is ready; awaiting go-live approval before deploy and product review.
+**Current milestone:** MVP build, local verification, localization, and production deployment are complete. STEP 10 product review is the remaining milestone.

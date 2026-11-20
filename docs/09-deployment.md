@@ -19,7 +19,7 @@ Salin `.env.example` ke `.env.local` untuk lokal, lalu daftarkan nilai yang sama
 | Variabel | Wajib | Keterangan |
 |---|---|---|
 | `DATABASE_URL` | Ya | Connection string Neon. Gunakan endpoint pooled untuk produksi. |
-| `NEXT_PUBLIC_APP_URL` | Ya | Origin publik aplikasi, tanpa trailing slash. Dipakai untuk redirect autentikasi. |
+| `APP_URL` | Ya | Origin aplikasi untuk redirect/link server-side, tanpa trailing slash. Bersifat private, tidak diekspos ke browser. |
 | `NODE_ENV` | Diatur host | Nilai produksi diatur otomatis oleh host; jangan diubah manual. |
 
 Jangan pernah memasukkan `.env.local` ke source control. `.env.example` hanya berisi placeholder.
@@ -67,7 +67,7 @@ Semua perintah harus lolos. Build terakhir yang tercatat lolos dengan 12 test pa
 1. Inisialisasi dan push repository ke Git provider.
 2. Import repository di host deployment.
 3. Pilih framework Next.js; biarkan build command dan output directory default.
-4. Isi `DATABASE_URL` dan `NEXT_PUBLIC_APP_URL` di pengaturan environment produksi.
+4. Isi `DATABASE_URL` dan `APP_URL` di pengaturan environment produksi.
 5. Deploy ke produksi setelah migrasi database selesai.
 
 ### Opsi B — CLI host
@@ -108,10 +108,10 @@ Lakukan setelah deployment selesai:
 | Item | Status |
 |---|---|
 | Dokumentasi deployment | Selesai |
-| Variabel lingkungan produksi | Pending — perlu nilai host produksi |
-| Migrasi database produksi | Pending |
-| Deployment live | Pending — perlu persetujuan dan akses host |
-| Smoke test produksi | Pending |
+| Variabel lingkungan produksi | Selesai — `DATABASE_URL` dan `APP_URL` terkonfigurasi di Vercel |
+| Migrasi database produksi | Selesai — 5 tabel aktif pada branch Neon `br-crimson-darkness-b3mljqfm` |
+| Deployment live | Selesai — https://scenova-seven.vercel.app/ |
+| Smoke test produksi | Pending — perlu pencatatan hasil uji manual pasca-rilis |
 | Product review (STEP 10) | Belum dimulai |
 
 ## 9. Catatan Implementasi
