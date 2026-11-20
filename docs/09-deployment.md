@@ -97,6 +97,19 @@ Lakukan setelah deployment selesai:
 - [ ] Akun berbeda tidak dapat melihat simulasi akun lain.
 - [ ] Tampilan desktop dan mobile tetap terbaca; tabel dapat di-scroll horizontal di layar sempit.
 
+### Hasil smoke test otomatis (read-only)
+
+| Pemeriksaan | Hasil |
+|---|---|
+| `GET /` | 200 `text/html`; judul, CTA, disclaimer, dan favicon tampil |
+| `GET /login` | 200 `text/html` |
+| `GET /api/simulations` | 405 — method tidak diizinkan, sesuai route yang hanya menerima POST |
+| `POST /api/simulations` tanpa autentikasi | 401 `{"error":"Please sign in to create a simulation."}` |
+| Cookie `scenova_lang=id` | `<html lang="id">`, metadata Bahasa Indonesia, seluruh CTA landing terlokalisasi |
+| Redirect CTA produksi | Setelah perbaikan CTA, build baru terverifikasi menampilkan **Mulai Simulasi** pada mode ID |
+
+Alur yang memerlukan akun (registrasi, login, buat simulasi, simpan/bandingkan skenario, isolasi antar-akun, dan tampilan mobile) masih perlu review manual pada STEP 10.
+
 ## 7. Rollback
 
 - Jika rilis aplikasi bermasalah, rollback ke deployment sebelumnya di host.
@@ -111,8 +124,8 @@ Lakukan setelah deployment selesai:
 | Variabel lingkungan produksi | Selesai — `DATABASE_URL` dan `APP_URL` terkonfigurasi di Vercel |
 | Migrasi database produksi | Selesai — 5 tabel aktif pada branch Neon `br-crimson-darkness-b3mljqfm` |
 | Deployment live | Selesai — https://scenova-seven.vercel.app/ |
-| Smoke test produksi | Pending — perlu pencatatan hasil uji manual pasca-rilis |
-| Product review (STEP 10) | Belum dimulai |
+| Smoke test produksi | Sebagian — pemeriksaan read-only lolos; alur terautentikasi perlu review manual |
+| Product review (STEP 10) | In progress — bukti smoke test siap; menunggu final approval |
 
 ## 9. Catatan Implementasi
 

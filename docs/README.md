@@ -2,7 +2,7 @@
 
 **Tagline:** Explore Scenarios. Make Better Decisions.  
 **Product:** Business & Productivity — Profit & Pricing Simulator  
-**Status:** MVP implemented, locally verified, and deployed at https://scenova-seven.vercel.app/; STEP 10 product review pending.
+**Status:** MVP implemented, locally verified, deployed at https://scenova-seven.vercel.app/, and smoke-tested; STEP 10 final approval pending.
 
 ## Document Structure
 

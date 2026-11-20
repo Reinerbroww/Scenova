@@ -394,6 +394,6 @@ All calculation edge cases must be tested, including zero revenue and non-positi
 | STEP 7 | Full-stack build | Complete — MVP flows implemented |
 | STEP 8 | Testing & debugging | Complete — local checks passed |
 | STEP 9 | Deployment & documentation | Complete — live at https://scenova-seven.vercel.app/; checklist in `docs/09-deployment.md` |
-| STEP 10 | Product review (additional review) | Not started |
+| STEP 10 | Product review (additional review) | In progress — production smoke-test evidence recorded in `docs/09-deployment.md`; awaiting final approval |
 
-**Current milestone:** MVP build, local verification, localization, and production deployment are complete. STEP 10 product review is the remaining milestone.
+**Current milestone:** MVP build, local verification, localization, production deployment, and read-only production smoke tests are complete. Final product approval is pending.

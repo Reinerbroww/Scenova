@@ -192,7 +192,7 @@ The production deployment is live at [scenova-seven.vercel.app](https://scenova-
 
 Deployment preparation is documented in [`docs/09-deployment.md`](docs/09-deployment.md). It covers prerequisites, environment configuration, database migration, pre-release checks, deployment options, production smoke tests, and rollback.
 
-Set `DATABASE_URL` and `APP_URL` in the host environment settings. Because `APP_URL` has no `NEXT_PUBLIC_` prefix, it stays private and is not exposed to the browser.
+Set `DATABASE_URL` and `APP_URL` in the host environment settings. Because `APP_URL` has no `NEXT_PUBLIC_` prefix, it stays private and is not exposed to the browser. Read-only smoke-test results are recorded in [`docs/09-deployment.md`](docs/09-deployment.md).
 
 ---
 
@@ -231,4 +231,4 @@ The MVP scope is intentionally fixed. Before adding features, changing the data 
 
 ## Status
 
-MVP build, local verification, localization, and production deployment are complete. The app is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/); STEP 10 product review remains the final milestone.
+MVP build, local verification, localization, production deployment, and read-only production smoke tests are complete. The app is live at [scenova-seven.vercel.app](https://scenova-seven.vercel.app/); STEP 10 final approval is pending.
