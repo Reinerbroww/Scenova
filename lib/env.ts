@@ -9,3 +9,13 @@ export function getDatabaseUrl(): string {
 
   return url;
 }
+
+export function getGeminiConfig(): { apiKey: string; model: string } {
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("GEMINI_API_KEY is not configured. See .env.example.");
+  }
+
+  return { apiKey, model: process.env.GEMINI_MODEL?.trim() || "gemini-3.1-flash-lite" };
+}

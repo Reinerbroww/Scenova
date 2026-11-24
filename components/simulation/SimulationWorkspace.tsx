@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { AiInsightCard } from "@/components/ai/AiInsightCard";
 import { FinancialOverviewChart } from "@/components/charts/FinancialOverviewChart";
 import { useI18n } from "@/components/i18n/LanguageProvider";
 import { Alert } from "@/components/ui/Alert";
@@ -259,6 +260,12 @@ export function SimulationWorkspace({
               {t("Estimates only — taxes, financing, demand changes, and other factors are not included.")}
             </p>
           </Card>
+
+          <AiInsightCard
+            key={JSON.stringify(assumptions)}
+            simulationId={simulation.id}
+            assumptions={assumptions}
+          />
         </div>
       </div>
 

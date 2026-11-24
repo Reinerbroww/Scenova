@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AiInsightCard } from "@/components/ai/AiInsightCard";
 import { FinancialOverviewChart } from "@/components/charts/FinancialOverviewChart";
 import { MetricCard } from "@/components/simulation/MetricCard";
 import { Alert } from "@/components/ui/Alert";
@@ -130,6 +131,10 @@ export default async function ResultsPage({
             <p>{t("Break-even volume is {value}.", { value: breakEvenText })}</p>
           </div>
         </Card>
+      </div>
+
+      <div className="mt-6">
+        <AiInsightCard simulationId={id} scenarioId={selected.id} />
       </div>
 
       <Card className="mt-8 p-5 sm:p-6">
