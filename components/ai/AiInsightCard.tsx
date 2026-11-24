@@ -46,7 +46,7 @@ export function AiInsightCard({
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-[11px] font-semibold tracking-[0.2em] text-coral-deep uppercase">
-            {t("AI insight")}
+            {t("Insight")}
           </p>
           <h2 className="mt-1 font-serif text-2xl text-forest">{t("Know your gaps, act with confidence")}</h2>
         </div>
@@ -120,7 +120,7 @@ export function AiInsightCard({
           </section>
 
           <p className="border-t border-forest/10 pt-3 text-xs text-ink/50">
-            {t("AI suggestions are based only on the numbers in this scenario. Use your own judgement before making a business decision.")}
+            {t("Suggestions are based only on the numbers in this scenario. Use your own judgement before making a business decision.")}
           </p>
         </div>
       )}

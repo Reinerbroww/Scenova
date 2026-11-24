@@ -219,7 +219,7 @@ const id: Record<string, string> = {
   "Confirm": "Konfirmasi",
   "Close dialog": "Tutup dialog",
   "Results & insights": "Hasil & wawasan",
-  "AI insight": "Wawasan AI",
+  "Insight": "Wawasan",
   "Know your gaps, act with confidence": "Kenali kekurangan Anda, ambil tindakan dengan percaya diri",
   "Generate insight": "Buat wawasan",
   "Regenerate insight": "Buat ulang wawasan",
@@ -230,12 +230,12 @@ const id: Record<string, string> = {
   "Strengths": "Kekuatan",
   "Weaknesses": "Kekurangan",
   "Recommended actions": "Tindakan yang disarankan",
-  "AI suggestions are based only on the numbers in this scenario. Use your own judgement before making a business decision.":
-    "Saran AI hanya didasarkan pada angka dalam skenario ini. Gunakan penilaian Anda sendiri sebelum mengambil keputusan bisnis.",
-  "AI insight is unavailable right now. Please try again later.":
-    "Wawasan AI belum tersedia saat ini. Silakan coba lagi nanti.",
-  "AI insight is not configured yet. Please try again later.":
-    "Wawasan AI belum dikonfigurasi. Silakan coba lagi nanti.",
+  "Suggestions are based only on the numbers in this scenario. Use your own judgement before making a business decision.":
+    "Saran hanya didasarkan pada angka dalam skenario ini. Gunakan penilaian Anda sendiri sebelum mengambil keputusan bisnis.",
+  "Insight is unavailable right now. Please try again later.":
+    "Wawasan belum tersedia saat ini. Silakan coba lagi nanti.",
+  "Insight is not configured yet. Please try again later.":
+    "Wawasan belum dikonfigurasi. Silakan coba lagi nanti.",
   "Showing": "Menampilkan",
   "This simulation has no saved scenarios yet. Open the workspace to adjust the assumptions and save a scenario first.":
     "Simulasi ini belum memiliki skenario tersimpan. Buka ruang kerja untuk mengubah asumsi dan menyimpan skenario terlebih dahulu.",

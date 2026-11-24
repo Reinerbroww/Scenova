@@ -83,11 +83,11 @@ export async function generateInsight(input: InsightInput): Promise<AiInsight> {
       },
     );
   } catch {
-    throw new AiServiceError("AI insight is unavailable right now. Please try again later.", 503);
+    throw new AiServiceError("Insight is unavailable right now. Please try again later.", 503);
   }
 
   if (!response.ok) {
-    throw new AiServiceError("AI insight is unavailable right now. Please try again later.", 503);
+    throw new AiServiceError("Insight is unavailable right now. Please try again later.", 503);
   }
 
   let text: string;
@@ -98,7 +98,7 @@ export async function generateInsight(input: InsightInput): Promise<AiInsight> {
       .map((part) => part.text ?? "")
       .join("");
   } catch {
-    throw new AiServiceError("AI insight could not be read. Please try again.");
+    throw new AiServiceError("Insight could not be read. Please try again.");
   }
 
   let raw: unknown;
@@ -106,13 +106,13 @@ export async function generateInsight(input: InsightInput): Promise<AiInsight> {
   try {
     raw = JSON.parse(text);
   } catch {
-    throw new AiServiceError("AI insight could not be read. Please try again.");
+    throw new AiServiceError("Insight could not be read. Please try again.");
   }
 
   const parsed = insightSchema.safeParse(raw);
 
   if (!parsed.success) {
-    throw new AiServiceError("AI insight could not be read. Please try again.");
+    throw new AiServiceError("Insight could not be read. Please try again.");
   }
 
   return parsed.data;

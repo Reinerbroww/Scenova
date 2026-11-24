@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     }
 
     if (error instanceof Error && error.message.includes("GEMINI_API_KEY")) {
-      return fail("AI insight is not configured yet. Please try again later.", 503);
+      return fail("Insight is not configured yet. Please try again later.", 503);
     }
 
     return handleError(error);
